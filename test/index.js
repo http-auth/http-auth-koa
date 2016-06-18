@@ -64,7 +64,7 @@ describe('koa', function () {
     });
 
     it('error', function (done) {
-        let callback = function (error, response, body) {
+        const callback = function (error, response, body) {
             expect(body).to.equal("Error comes here");
             done();
         };
@@ -74,7 +74,7 @@ describe('koa', function () {
     });
 
     it('success', function (done) {
-        let callback = function (error, response, body) {
+        const callback = function (error, response, body) {
             expect(body).to.equal("Welcome to private area - mia!");
             done();
         };
@@ -84,7 +84,7 @@ describe('koa', function () {
     });
 
     it('wrong password', function (done) {
-        let callback = function (error, response, body) {
+        const callback = function (error, response, body) {
             expect(body).to.equal("401 Unauthorized");
             done();
         };
@@ -94,7 +94,7 @@ describe('koa', function () {
     });
 
     it('wrong user', function (done) {
-        let callback = function (error, response, body) {
+        const callback = function (error, response, body) {
             expect(body).to.equal("401 Unauthorized");
             done();
         };
@@ -104,7 +104,7 @@ describe('koa', function () {
     });
 
     it('password with colon', function (done) {
-        let callback = function (error, response, body) {
+        const callback = function (error, response, body) {
             expect(body).to.equal("Welcome to private area - ColonUser!");
             done();
         };
