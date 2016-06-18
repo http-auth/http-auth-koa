@@ -31,13 +31,14 @@ const basic = auth.basic({
 import Koa from 'koa'
 const app = new Koa();
 
-// Setup auth.
-app.use(koaAuth(basic));
-
 // Setup basic handler.
 app.use(async ctx => {
-  ctx.body = `Welcome to koa ${ctx.request.user}!`;
+    await next();
+    ctx.body = `Welcome to koa ${ctx.req.user}!`;
 });
+
+// Setup auth.
+app.use(koaAuth(basic));
 ```
 
 

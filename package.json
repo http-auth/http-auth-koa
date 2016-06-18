@@ -1,7 +1,7 @@
 {
   "name": "http-auth-koa",
   "description": "Node.js package for HTTP basic and digest access authentication.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Gevorg Harutyunyan (http://github.com/gevorg)",
   "maintainers": [
     {

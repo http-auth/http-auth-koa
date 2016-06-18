@@ -33,17 +33,27 @@ describe('koa', function () {
             }
         });
 
-
         // Koa setup.
         const app = new Koa();
 
-        // Setup auth.
-        app.use(koaAuth(basic));
+        // Wait for error.
+        app.use(async (ctx, next) => {
+            try {
+                await next();
+            } catch (err) {
+                ctx.body = err.message;
+                ctx.status = 400;
+            }
+        });
 
         // Setup basic handler.
-        app.use(async ctx => {
-            ctx.body = `Welcome to private area - ${ctx.request.user}!`;
+        app.use(async (ctx, next) => {
+            await next();
+            ctx.body = `Welcome to private area - ${ctx.req.user}!`;
         });
+
+        // Setup auth.
+        app.use(koaAuth(basic));
 
         // Start server.
         server = app.listen(1337);
@@ -53,45 +63,50 @@ describe('koa', function () {
         server.close();
     });
 
-    it('error', function () {
+    it('error', function (done) {
         let callback = function (error, response, body) {
             expect(body).to.equal("Error comes here");
+            done();
         };
 
         // Test request.
         request.get('http://127.0.0.1:1337', callback).auth('gevorg', 'gpass');
     });
 
-    it('success', function () {
+    it('success', function (done) {
         let callback = function (error, response, body) {
             expect(body).to.equal("Welcome to private area - mia!");
+            done();
         };
 
         // Test request.
         request.get('http://127.0.0.1:1337', callback).auth('mia', 'supergirl');
     });
 
-    it('wrong password', function () {
+    it('wrong password', function (done) {
         let callback = function (error, response, body) {
             expect(body).to.equal("401 Unauthorized");
+            done();
         };
 
         // Test request.
         request.get('http://127.0.0.1:1337', callback).auth('mia', 'cute');
     });
 
-    it('wrong user', function () {
+    it('wrong user', function (done) {
         let callback = function (error, response, body) {
             expect(body).to.equal("401 Unauthorized");
+            done();
         };
 
         // Test request.
         request.get('http://127.0.0.1:1337', callback).auth('Tina', 'supergirl');
     });
 
-    it('password with colon', function () {
+    it('password with colon', function (done) {
         let callback = function (error, response, body) {
             expect(body).to.equal("Welcome to private area - ColonUser!");
+            done();
         };
 
         // Test request.
