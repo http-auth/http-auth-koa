@@ -2,7 +2,6 @@
 [Koa framework](http://koajs.com/) integration with [http-auth](https://github.com/http-auth/http-auth) module.
 
 [![Build Status](https://api.travis-ci.org/http-auth/http-auth-koa.png)](https://travis-ci.org/http-auth/http-auth-koa)
-[![Dependency Status](https://david-dm.org/http-auth/http-auth-koa.png)](https://david-dm.org/http-auth/http-auth-koa)
 
 ## Installation
 
