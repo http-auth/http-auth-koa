@@ -1,6 +1,6 @@
 {
   "name": "http-auth-koa",
-  "description": "Node.js package for HTTP basic and digest access authentication.",
+  "description": "Koa framework integration with http-auth module.",
   "version": "1.0.1",
   "author": "Gevorg Harutyunyan (http://github.com/gevorg)",
   "maintainers": [
@@ -32,7 +32,6 @@
     "babel-plugin-transform-async-to-generator": "^6.8.0",
     "babel-plugin-syntax-async-functions": "^6.8.0",
     "chai": "^3.5.0",
-    "express": "^4.13.4",
     "koa": "^2.0.0",
     "mocha": "^2.5.3",
     "request": "^2.72.0",
