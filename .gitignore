@@ -4,5 +4,4 @@ http-auth-koa.iml
 .idea
 *.swp
 .settings
-gensrc
 _site

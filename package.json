@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/http-auth/http-auth-koa.git"
   },
-  "main": "./gensrc/index.js",
+  "main": "./lib/index.js",
   "licenses": [
     {
       "type": "MIT",
@@ -42,7 +42,7 @@
   },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require babel-polyfill",
-    "compile": "babel src -d gensrc",
+    "compile": "babel src -d lib",
     "prepublish": "npm run compile"
   },
   "keywords": [
