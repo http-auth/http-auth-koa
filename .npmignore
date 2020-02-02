@@ -5,8 +5,9 @@ http-auth-koa.iml
 .idea
 .settings
 _site
-src
 test
 examples
 .travis.yml
 data
+.github
+.eslintrc.json
