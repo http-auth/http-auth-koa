@@ -1,13 +1,14 @@
 // Authentication module.
-import auth from 'http-auth'
-import koaAuth from '../src/index'
+const auth =  require('http-auth');
+const koaAuth = require('../src/index');
+
 const basic = auth.basic({
     realm: "Simon Area.",
     file: __dirname + "/../data/users.htpasswd"
 });
 
 // Koa setup.
-import Koa from 'koa'
+const Koa = require('koa');
 const app = new Koa();
 
 // Setup basic handler.

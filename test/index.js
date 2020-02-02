@@ -1,17 +1,14 @@
-"use strict";
-
-// Expect module.
-import {expect} from 'chai'
-
-// Request module.
-import request from 'request'
-
-// Koa.
-import Koa from 'koa'
+const Koa = require('koa');
 
 // Source.
-import auth from 'http-auth'
-import koaAuth from '../src/index'
+const auth = require('http-auth');
+const koaAuth = require('../src/index');
+
+// Request module.
+const request = require('request');
+
+// Expect module.
+const expect = require('chai').expect;
 
 // Express.
 describe('koa', function () {
@@ -64,7 +61,7 @@ describe('koa', function () {
     });
 
     it('error', function (done) {
-        const callback = function (error, response, body) {
+        const callback = function (_error, _response, body) {
             expect(body).to.equal("Error comes here");
             done();
         };
