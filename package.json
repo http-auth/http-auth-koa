@@ -1,7 +1,7 @@
 {
   "name": "http-auth-koa",
   "description": "Koa framework integration with http-auth module.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Gevorg Harutyunyan (http://github.com/gevorg)",
   "maintainers": [
     {
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/http-auth/http-auth-koa.git"
   },
-  "main": "./gensrc/index.js",
+	"main": "./src/index.js",
   "licenses": [
     {
       "type": "MIT",
