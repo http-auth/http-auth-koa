@@ -1,7 +1,7 @@
 .gitignore
 node_modules
 .project
-http-auth-koa.iml
+*.iml
 .idea
 .settings
 _site
@@ -11,3 +11,4 @@ examples
 data
 .github
 .eslintrc.json
+.prettier.config.js
