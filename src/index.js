@@ -1,12 +1,12 @@
 // Export middleware.
 module.exports = (auth) => {
     return async (ctx, next) => {
-        await auth.check(ctx.req, ctx.res, (req, res, err) => {
+        await auth.check((req, res, err) => {
             if (err) {
                 throw err;
             } else {
                 next();
             }
-        });
+        })(ctx.req, ctx.res);
     };
 }
