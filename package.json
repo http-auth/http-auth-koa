@@ -25,7 +25,7 @@
   "bugs": {
     "url": "http://github.com/http-auth/http-auth-koa/issues"
   },
-  "devDependencies": {
+  "devDependencies": { 
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
